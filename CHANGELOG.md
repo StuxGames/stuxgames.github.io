@@ -5,6 +5,14 @@ All notable changes to the Stux.Games GitHub Pages Redirect (stuxgames.github.io
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## v26.11.06-2
+
+### Added
+
+- CI (`.github/workflows/ci.yml`), on pushes to `main` and `test` and on pull requests: `tests/version.sh`, a check that `index.html`'s meta refresh and canonical link point at the same URL, and markdownlint. Pull requests from
+  `test` into `main` now need it to pass, as CONTRIBUTING's Branches section says
+- `.markdownlint.json`, the same Markdown rules the Stux.Games template repos use
+
 ## v26.11.06-1
 
 ### Added
