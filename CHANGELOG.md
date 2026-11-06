@@ -1,9 +1,23 @@
 # Changelog
 
-All notable changes to stuxgames.github.io are documented here.
+All notable changes to the Stux.Games GitHub Pages Redirect (stuxgames.github.io) are documented here.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Date Versioning](https://datevers.ing) since v26.10.23 (`YY.MM.DD`, the UTC release date, with `-1`, `-2`… for later releases the same day); earlier releases used [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## v26.11.06
+
+### Changed
+
+- The README describes this repo rather than the generic template: it says where stuxgames.github.io redirects
+  (github.com/StuxGames), how the Actions deploy works, and points to StuxGroup/GitHubPagesRedirect for anyone wanting
+  their own. It's titled **Stux.Games GitHub Pages Redirect**, with the standard footer
+- The logos on the README and CONTRIBUTING use the light/dark `<picture>` form
+
+### Fixed
+
+- The README no longer tells you to replace `example.com`, says to use this repo as a template (it isn't one) or
+  grants reuse; it now carries the Stux Group Ltd copyright
 
 ## v26.10.23
 
