@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://global.media.stux.games/logo.png" height="80" alt="Stux.Games Logo">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="https://global.media.stux.games/logo-light.png"><source media="(prefers-color-scheme: light)" srcset="https://global.media.stux.games/logo-dark.png"><img src="https://global.media.stux.games/logo-dark.png" height="80" alt="Stux.Games Logo"></picture>
 </p>
 
-# Contributing to stuxgames.github.io
+# Contributing to the Stux.Games GitHub Pages Redirect
 
 This is a minimal GitHub Pages redirect page (`index.html`) that forwards visitors from `stuxgames.github.io` to [github.com/StuxGames](https://github.com/StuxGames). This document is for anyone working on the redirect page itself.
 
@@ -31,3 +31,4 @@ This project uses [Date Versioning](https://datevers.ing). To release:
 ## Before committing
 
 - Open `index.html` in a browser and confirm the redirect fires correctly
+- Run `bash tests/version.sh`
