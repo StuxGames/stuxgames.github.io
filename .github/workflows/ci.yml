@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main, test]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Version
+        run: bash tests/version.sh
+
+      - name: Redirect points at one target
+        run: |
+          set -euo pipefail
+          refresh=$(grep -o 'content="0;url=[^"]*"' index.html | sed 's/.*url=//; s/"$//')
+          canonical=$(grep -o 'rel="canonical" href="[^"]*"' index.html | sed 's/.*href="//; s/"$//')
+          echo "refresh=$refresh canonical=$canonical"
+          if [ -z "$refresh" ] || [ "$refresh" != "$canonical" ]; then
+            echo "::error::index.html's meta refresh and canonical link must both point at the same URL"; exit 1
+          fi
+
+      - name: Lint Markdown
+        run: npx --yes markdownlint-cli@0.41 "**/*.md" --ignore node_modules
